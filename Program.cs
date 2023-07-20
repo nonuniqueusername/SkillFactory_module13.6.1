@@ -12,8 +12,8 @@ namespace SkillFactory_module13._6._1
             string path = Console.ReadLine();
             var fileContent = GetFileContent(path);
 
-            MeasureExecTime(GetList, fileContent, "List");
             MeasureExecTime(GetLinkedList, fileContent, "LinkedList");
+            MeasureExecTime(GetList, fileContent, "List");
         }
 
         static private string[] GetFileContent(string path)
@@ -47,7 +47,7 @@ namespace SkillFactory_module13._6._1
             timer.Start();
             method(fileContentArray);
             timer.Stop();
-            Console.WriteLine($"{objectType}: {timer.ElapsedMilliseconds} ms");
+            Console.WriteLine($"{objectType}: {timer.ElapsedTicks} ticks");
         }
     }
 }
